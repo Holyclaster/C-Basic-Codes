@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main() {
+    char operator;
+    double num, result;
+    // Sonuna '=' koyup 'Enter' a basınca sonuçlanır
+    // 4 İşlem Yapabilir (Sınırsız)
+    printf("Kullanim: <sayi1> <operator> <sayi2> ... <operator> <sayiN>\n");
+    printf("Operatorler: + (toplama), - (cikarma), * (carpma), / (bolme)\n");
+    printf("Ornek: 5 + 3 * 2 / 4\n");
+
+    // Read the first number as the initial result
+    scanf("%lf", &result);
+
+    while (1) {
+        scanf(" %c", &operator);
+        if (operator == '=') {
+            break;
+        }
+
+        // Read the next number
+        scanf("%lf", &num);
+
+        switch (operator) {
+            case '+':
+                result += num;
+                break;
+            case '-':
+                result -= num;
+                break;
+            case '*':
+                result *= num;
+                break;
+            case '/':
+                if (num == 0) {
+                    printf("Bolen 0 olamaz. Program sonlandiriliyor.\n");
+                    return 1;
+                }
+                result /= num;
+                break;
+            default:
+                printf("Gecersiz bir operator girdiniz. Program sonlandiriliyor.\n");
+                return 1;
+        }
+    }
+
+    printf("Sonuc: %.2f\n", result);
+
+    return 0;
+}

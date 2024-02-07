@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main()
+{
+    int i, toplam;
+     
+    for(i=0; i<=41; i+=4)
+    {
+        printf("%d\n",i);
+    }
+    return 0;
+} 

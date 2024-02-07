@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int Alinan_Not;
+
+ printf("Alınan Notu Giriniz:");
+ scanf("%d", &Alinan_Not);
+ 
+ if (100 >= Alinan_Not && Alinan_Not >= 90) {
+     printf("Harf Notunuz AA\n");
+ }
+ else if (90 > Alinan_Not && Alinan_Not >= 80) {
+     printf("Harf Notunuz BA\n");
+ }
+  else if (80> Alinan_Not && Alinan_Not >= 70) {
+     printf("Harf Notunuz BBn\n");
+  }
+   else if (70 > Alinan_Not && Alinan_Not >= 60) {
+     printf("Harf Notunuz CB\n");
+  }
+   else if (60 > Alinan_Not && Alinan_Not >= 50) {
+     printf("Harf Notunuz CC\n");
+  }
+   else if (50 > Alinan_Not && Alinan_Not >= 40) {
+     printf("Harf Notunuz DC\n");
+  }
+   else if (40 > Alinan_Not && Alinan_Not >= 30) {
+     printf("Harf Notunuz DD\n");
+  }
+   else if (30 > Alinan_Not && Alinan_Not >= 0) {
+     printf("Harf Notunuz F\n");
+  }
+    else {
+        printf("Gecersiz Not girdiniz");
+    } 
+
+     return 0;
+}

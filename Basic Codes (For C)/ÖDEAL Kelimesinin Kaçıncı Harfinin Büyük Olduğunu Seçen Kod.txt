@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    
+    int kelime;
+    
+    printf("ODEAL Kelimesini Kacınıcı Harfi Buyuk Olsun(1-5): \n");
+    scanf("%d", &kelime);
+    if (kelime<=0 && kelime>6) 
+    {
+        printf("Lutfen Gecerli Rakam Gırınız:\n" );
+    }
+    
+    else if (kelime==1) 
+    {
+        printf("Odeal");
+    }
+    
+    else if (kelime==2)
+    {
+        printf("oDeal");
+    }
+    else if (kelime==3) 
+    {
+        printf("odEal");
+    }
+    else if (kelime==4)
+    {
+        printf("odeAl");
+    }
+    else 
+    {
+        printf("odeaL");
+    }
+
+    return 0;
+}

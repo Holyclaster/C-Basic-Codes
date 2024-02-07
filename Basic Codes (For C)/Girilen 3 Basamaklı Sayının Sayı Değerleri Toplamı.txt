@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+  int toplam, sayi1, birler, onlar, yüzler;
+  
+  printf("Uc Basamakli Bir Sayi Giriniz: \n");
+  scanf("%d", &sayi1);
+  
+  if(sayi1>999 || sayi1<100) {
+      printf("Lutfen Gecerli Bir Sayi Giriniz: \n");
+  }
+  
+  yüzler=sayi1/100;
+  birler=sayi1%10;
+  onlar=(sayi1/10)%10;
+  toplam=birler+onlar+yüzler;
+  printf("%d\n", toplam);
+  
+    return 0;
+}

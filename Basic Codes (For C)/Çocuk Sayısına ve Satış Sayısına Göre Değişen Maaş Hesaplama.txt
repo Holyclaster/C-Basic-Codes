@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main()
+{
+float Net_Maas, Satis_Tutari, Toplam_Maas;
+int Cocuk_Sayisi;
+
+Net_Maas = 2500;
+
+printf("Cocuk Sayisini Giriniz: \n");
+scanf("%d", &Cocuk_Sayisi);
+
+printf("Satis Tutarinizi Giriniz: \n");
+scanf("%f", &Satis_Tutari);
+
+if (Satis_Tutari <= 1000)  
+{
+    Net_Maas += (Net_Maas*0.03);
+}
+else if (Satis_Tutari >= 2000 && Satis_Tutari <= 3000) 
+{
+
+    Net_Maas += (Net_Maas*0.06);
+}    
+else if (Satis_Tutari > 3000)
+{
+    
+    Net_Maas += (Net_Maas*0.09);
+}
+
+if(Cocuk_Sayisi = 1) {
+    
+    Net_Maas += (Net_Maas*0.02);
+}
+else if (Cocuk_Sayisi = 2 ) {
+    
+    Net_Maas += (Net_Maas*0.04);
+}
+else if (Cocuk_Sayisi >2 ){
+    
+    Net_Maas += (Net_Maas*0.06);
+    
+}
+
+Toplam_Maas = Net_Maas + Cocuk_Sayisi + Satis_Tutari;
+
+printf("Maasınız: %2f\n", Toplam_Maas);
+    
+    return 0;
+    
+}

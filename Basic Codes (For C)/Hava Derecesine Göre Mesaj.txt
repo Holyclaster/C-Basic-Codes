@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main()
+{
+    int Celsius;
+    
+    printf("Enter a temperature: \n");
+    scanf("%d", &Celsius);
+    
+    if (Celsius < 0) {
+        printf("It is minus Celsius (Cold)\n");
+    }
+    
+    else if (Celsius == 0 ) {
+        printf("It is 0 Degree\n");
+    }
+    
+    else if (Celsius >= 1 && Celsius <= 20) {
+        printf("The Weather is Cool\n");
+    }
+    
+    else if (Celsius >= 21 && Celsius <= 25  ) {
+        printf("It is Warm\n");
+    }    
+    else if (Celsius >= 26  && Celsius <= 30 ) {
+            printf("It is Hot\n");
+    }        
+    else {
+            printf("Hell!!!?!?!?\n");
+            }
+        
+    
+    
+    return 0;
+}

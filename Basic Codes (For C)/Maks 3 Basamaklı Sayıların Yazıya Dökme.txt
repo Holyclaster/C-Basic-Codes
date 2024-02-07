@@ -1,0 +1,120 @@
+#include <stdio.h>
+
+int main()
+{
+    int sayi1, birler, onlar, yuzler;
+    
+     while (1) {
+        printf("Uc ya da Daha Az Basamakli Bir Sayi Giriniz: \n");
+        if (scanf("%d", &sayi1) != 1 || sayi1 > 999) {
+            printf("Hatali giris! Lutfen Maksimum 3 basamakli bir sayi giriniz.\n");
+            
+            while (getchar() != '\n');
+        } else {
+            break; 
+        }
+    }
+    
+    birler = sayi1 % 10;
+    onlar = (sayi1 / 10) % 10;
+    yuzler = sayi1 / 100;
+    
+    switch (yuzler) {
+        case 1:
+            printf("Yuz ");
+            break;
+        case 2:
+            printf("Iki Yuz ");
+            break;
+        case 3:
+            printf("Uc Yuz ");
+            break;
+        case 4:
+            printf("Dort Yuz ");
+            break;
+        case 5:
+            printf("Bes Yuz ");
+            break;
+        case 6:
+            printf("Alti Yuz ");
+            break;
+        case 7:
+            printf("Yedi Yuz ");
+            break;
+        case 8:
+            printf("Sekiz Yuz");
+            break;
+        case 9:
+            printf("Dokuz Yuz ");
+            break;    
+            
+        default:
+            printf(" ");
+            break;
+    }
+    
+    switch (onlar) {
+        case 1:
+            printf("On ");
+            break;
+        case 2:
+            printf("Yirmi ");
+            break;
+        case 3:
+            printf("Otuz ");
+            break;
+        case 4:
+            printf("Kirk ");
+            break;
+        case 5:
+            printf("Elli ");
+            break;
+        case 6:
+            printf("Altmis ");
+            break;        
+        case 7:
+            printf("Yetmis ");
+            break;
+        case 8:
+            printf("Seksen ");
+            break;
+        case 9:
+            printf("Doksa ");
+            break;    
+        default:
+            printf(" ");
+            break;
+    }
+    
+    switch (birler) {
+        case 1:
+            printf("Bir");
+            break;
+        case 2:
+            printf("Iki");
+            break;
+        case 3:
+        printf("Uc");
+            break;
+        case 4:
+        printf("Dort");
+            break;
+        case 5:
+        printf("Bes");
+            break;    
+        case 6:
+        printf("Alti");
+            break;
+        case 7:
+        printf("Yedi");
+            break;
+        case 8:
+        printf("Sekiz");
+            break;
+        default:
+            printf("Dokuz");
+            break;
+    }
+
+    return 0;
+}

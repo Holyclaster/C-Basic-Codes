@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    char Islem;
+    float result;
+
+    printf("Yapmak Istedginiz Islemi Seciniz: (+, -, *, /)\n");
+    scanf(" %c", &Islem);
+
+    printf("Kac tane sayi gireceksiniz? ");
+    scanf("%d", &n);
+
+    printf("Lutfen %d adet sayi giriniz:\n", n);
+    scanf("%f", &result);
+
+    for (i = 1; i < n; i++) {
+        float num;
+        printf("Sayi %d: ", i + 1);
+        scanf("%f", &num);
+
+        switch (Islem) {
+            case '+':
+                result += num;
+                break;
+            case '-':
+                result -= num;
+                break;
+            case '*':
+                result *= num;
+                break;
+            case '/':
+                if (num == 0) {
+                    printf("Bolen 0 olamaz. Program sonlandiriliyor.\n");
+                    return 1;
+                }
+                result /= num;
+                break;
+            default:
+                printf("Gecersiz bir islem secildi. Program sonlandiriliyor.\n");
+                return 1;
+        }
+    }
+
+    printf("Sonuc: %.2f\n", result);
+
+    return 0;
+}

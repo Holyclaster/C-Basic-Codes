@@ -1,0 +1,29 @@
+    #include <stdio.h>
+    
+    struct kitap
+    {
+        char adi[20];
+        char yazar[20];
+        int sayfa_sayisi;
+    };
+    
+    struct kitap bilgi;
+
+int main()
+{
+    printf("Kitap Adi: ");
+    scanf("%s", bilgi.adi);
+    
+    printf("Yazari: ");
+    scanf("%s", bilgi.yazar);
+    
+    printf("Sayfa Sayisi: ");
+    scanf("%d", &bilgi.sayfa_sayisi);
+    
+    printf("Kitap Adi: %s\n", bilgi.adi);
+    printf("Yazari: %s\n", bilgi.yazar);
+    printf("Sayfa Sayisi: %d\n", bilgi.sayfa_sayisi);
+    
+    
+    return 0;
+}

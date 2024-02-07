@@ -1,0 +1,115 @@
+#include <stdio.h>
+
+int main()
+{
+    char harf;                  
+    printf("Enter a letter\n");
+    scanf("%c", &harf );
+    
+    switch (harf) 
+    {
+        case 'a':
+        printf("%c, You Pressed a\n");
+        break;
+        
+        case 'b':
+        printf("%c, You Pressed b\n");
+        break;
+        
+        case 'c':
+        printf("%c, You Pressed c\n");
+        break;
+        
+        case 'd':
+        printf("%c, You Pressed d\n");
+        break;
+        
+        case 'e':
+        printf("%c, You Pressed e\n");
+        break;
+        
+        case 'f':
+        printf("%c, You Pressed f\n");
+        break;
+        
+        case 'g':
+        printf("%c, You Pressed g\n");
+        break;
+        
+        case 'h':
+        printf("%c, You Pressed h\n");
+        break;
+        
+        case 'i':
+        printf("%c, You Pressed i\n");
+        break;
+        
+        case 'j':
+        printf("%c, You Pressed j\n");
+        break;
+        
+        case 'k':
+        printf("%c, You Pressed k\n");
+        break;
+        
+        case 'l':
+        printf("%c, You Pressed l\n");
+        break;
+        
+        case 'm':
+        printf("%c, You Pressed m\n");
+        break;
+    
+        case 'o':
+        printf("%c, You Pressed o\n");
+        break;
+        
+        case 'p':
+        printf("%c, You Pressed p\n");
+        break;
+        
+        case 'r':
+        printf("%c, You Pressed r\n");
+        break;
+        
+        case 's':
+        printf("%c, You Pressed s\n");
+        break;
+    
+        case 't':
+        printf("%c, You Pressed t\n");
+        break;
+        
+        case 'u':
+        printf("%c, You Pressed u\n");
+        break;
+        
+        case 'w':
+        printf("%c, You Pressed w\n");
+        break;
+        
+        case 'y':
+        printf("%c, You Pressed y\n");
+        break;
+        
+        case 'v':
+        printf("%c, You Pressed v\n");
+        break;
+        
+        case 'z':
+        printf("%c, You Pressed z\n");
+        break;
+        
+        case 'q':
+        printf("%c, You Pressed q\n");
+        break;
+        
+        default:
+        printf("You Pressed Not a Letter");
+    }
+    
+    
+
+
+    return 0;
+}

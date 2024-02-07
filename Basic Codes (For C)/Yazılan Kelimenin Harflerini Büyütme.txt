@@ -1,0 +1,109 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+
+void buyukharfecevir_ilkharf(char *kelime) 
+{
+    if (*kelime)
+        *kelime = toupper(*kelime);
+}
+
+void buyukharfecevir_tum(char *kelime) 
+{
+    for (int i = 0; kelime[i] != '\0'; i++) 
+    {
+        kelime[i] = toupper(kelime[i]);
+    }
+}
+
+void buyukharfecevir_istenilen(char *kelime, int harfsirasi) 
+{
+    int count = 0;
+    for (int i = 0; kelime[i] != '\0'; i++) 
+    {
+        if (isalpha(kelime[i])) 
+        {
+            count++;
+            if (count == harfsirasi) 
+            {
+                kelime[i] = toupper(kelime[i]);
+                break;
+            }
+        }
+    }
+}
+
+void buyukharfecevirtip(char *kelime, char secilenharf) 
+{
+    for (int i = 0; kelime[i] != '\0'; i++) 
+    {
+        if (kelime[i] == secilenharf) 
+        {
+            kelime[i] = toupper(secilenharf);
+        }
+    }
+}
+
+
+int main() {
+    int girilensayi;
+    char kelime[20];
+    char secilenharf;
+
+    printf("************************\n");
+    printf("***** --- MENU --- *****\n");
+    printf("************************\n");
+    printf("\n");
+    printf("Yapilabilecek Islemler:\n");
+    printf("1-)Girilen Kelimenin Ilk Harfini Buyutme\n");
+    printf("2-)Girilen Harflerin Hepsini Buyutme\n");
+    printf("3-)Sadece Istenilen Harfi Secme\n");
+    printf("4-)Istenilen Harfi Hepsini Degistirme\n");
+    
+
+    printf("Lutfen Yapmak Istediginiz Islemi Seciniz: ");
+    scanf("%d", &girilensayi);
+
+    switch (girilensayi) {
+        case 1:
+            printf("Lutfen Kelimeyi Giriniz: ");
+            scanf("%s", kelime);
+            buyukharfecevir_ilkharf(kelime);
+            break;
+
+        case 2:
+            printf("Lutfen Kelimeyi Giriniz: ");
+            scanf("%s", kelime);
+            buyukharfecevir_tum(kelime);
+            break;
+
+        case 3:
+            printf("Lutfen Kelimeyi Giriniz:\n");
+            scanf("%s", kelime);
+            printf("Hangi harfin buyuk olmasini istersiniz (1, 2, 3, ...):\n");
+            int harfsirasi;
+            scanf("%d", &harfsirasi);
+            buyukharfecevir_istenilen(kelime, harfsirasi);
+            break;
+            
+        case 4:
+            printf("Lutfen Kelimeyi Giriniz:");
+            scanf("%s", kelime);
+            
+            getchar();
+            
+            printf("Buyuk Harfe Cevirmek Istediginiz Harfi Giriniz:");
+            scanf("%c", &secilenharf);
+            buyukharfecevirtip(kelime, secilenharf);
+            printf("%s\n", kelime);
+            break;
+
+        default:
+            printf("Hatali Secim! Gecerli Bir Secenek Seciniz.\n");
+            return 1;
+    }
+
+    printf("Sonuc: %s\n", kelime);
+
+    return 0;
+}

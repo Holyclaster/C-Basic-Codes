@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char Adiniz[20], Soyadiniz[20], Adres[100], Tel_No[15];
+    int Yas;
+
+    printf("Adinizi Giriniz: ");
+    fgets(Adiniz, sizeof(Adiniz), stdin);
+    Adiniz[strcspn(Adiniz, "\n")] = '\0';  // Son karakteri satır sonu karakteri olarak değiştir
+
+    printf("Soyadinizi Giriniz: ");
+    fgets(Soyadiniz, sizeof(Soyadiniz), stdin);
+    Soyadiniz[strcspn(Soyadiniz, "\n")] = '\0';  // Son karakteri satır sonu karakteri olarak değiştir
+
+    printf("Yasinizi Giriniz: ");
+    scanf("%d", &Yas);
+    getchar();  // Satır sonu karakterini tüketmek için
+
+    printf("Adresinizi Giriniz: ");
+    fgets(Adres, sizeof(Adres), stdin);
+    Adres[strcspn(Adres, "\n")] = '\0';  // Son karakteri satır sonu karakteri olarak değiştir
+
+    printf("Telefon Numaranizi Giriniz: ");
+    fgets(Tel_No, sizeof(Tel_No), stdin);
+    Tel_No[strcspn(Tel_No, "\n")] = '\0';  // Son karakteri satır sonu karakteri olarak değiştir
+
+    printf("\n---- Bilgileriniz ----\n");
+    printf("Ad: %s\n", Adiniz);
+    printf("Soyad: %s\n", Soyadiniz);
+    printf("Yas: %d\n", Yas);
+    printf("Adres: %s\n", Adres);
+    printf("Telefon No: %s\n", Tel_No);
+
+    return 0;
+}
