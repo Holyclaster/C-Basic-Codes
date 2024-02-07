@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct book
+{
+    char nameOfTheBook[30];
+    float price;
+    int page;
+};
+
+typedef struct
+{
+    char nameSurname[30];
+    int age;    
+} writer;
+
+int main ()
+{
+    // Direct
+    struct book book1;
+    strcpy(book1.nameOfTheBook, "History Of The Turks");
+    book1.price = 2.25;
+    book1.page = 350;
+    printf("Informations are: %s %.2f %d\n", book1.nameOfTheBook, book1.price, book1.page);
+
+    //Undirect
+    struct book *book2 = (struct book *)malloc(sizeof(struct book));
+    strcpy(book2->nameOfTheBook, "GodFather");
+    book2->price = 2.5;
+    book2->page = 302;
+
+    printf("Informations %s %.2f %d \n",book2->nameOfTheBook, book2->price, book2->page);
+
+    //Typdef-Direct
+    writer writer1;
+    strcpy(writer1.nameSurname, "Ilber Ortayli");
+    writer1.age = 74;
+
+    //Typdef-Undirect
+    writer *writer2 = (writer *)malloc (sizeof(writer));
+    strcpy(writer2->nameSurname, "George Orwell");
+    writer2->age = 47;
+
+    printf("Writer 1: %s %d \n",writer1.nameSurname, writer1.age);
+    printf("Writer 1: %s %d \n",writer2->nameSurname, writer2->age);
+    
+    free(book2);
+    free(writer2);
+
+    return 1;
+}

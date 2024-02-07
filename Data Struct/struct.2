@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct 
+{
+    char teamName[30];
+    int yearOfEstablish;  
+} team;
+
+typedef struct 
+{
+    char nameSurname[30];
+    int age;  
+    team tm;
+} player;
+
+int main()
+{
+    
+    player pl;
+    strcpy(pl.nameSurname, "Maruo Icardi");
+    pl.age = 28;   
+    strcpy (pl.tm.teamName,"Galatasaray");
+    pl.tm.yearOfEstablish = 1905;
+
+    printf("Informations %s %d",pl.tm.teamName, pl.tm.yearOfEstablish);    
+    return 1;
+}

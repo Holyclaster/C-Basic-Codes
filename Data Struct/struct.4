@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct 
+{
+    char teamName[30];
+    int yearOfEstablish;  
+} team;
+
+typedef struct 
+{
+    char nameSurname[30];
+    int age;
+    team *team;
+} player;
+
+int main()
+{
+    team *tm = (team *)malloc(sizeof(team));
+    strcpy(tm->teamName,"Real Madrid");
+    tm->yearOfEstablish= 1902;
+
+    player pl;
+    strcpy(pl.nameSurname,"Arda Guler");
+    pl.age = 22;
+    pl.team = tm;
+
+    printf("Informations: %s %d", pl.team->teamName, pl.team->yearOfEstablish);
+    free(tm);
+
+    return 0;
+}

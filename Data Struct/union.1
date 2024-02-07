@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+
+union student
+{
+    char name[20];
+    int no;
+    float score;
+};
+
+typedef union
+{
+    char name[20];
+    int age;
+} teacher;
+
+
+int main()
+{
+    printf("Boyut %ld Byte\n", sizeof(union student));
+
+    union student o;
+    strcpy(o.name, "Selim");
+    printf("İsim: %s\n", o.name);
+    o.no = 148;
+    printf("Student Number: %d\n", o.no);
+    o.score = 84.5;
+    printf("Average Of The Student: %2.f\n", o.score);
+
+    //Using With Typdef
+    teacher tchr;
+
+    strcpy(tchr.name, "Ismail");
+    printf("Teacher Name: %s\n", tchr.name);
+
+    tchr.age = 45;
+    printf("The Teacher is %d years old.\n  ",tchr.age);
+
+    
+    return 0;
+}

@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//Linked List
+struct node 
+{
+    int data;
+        struct node *next;
+};
+
+// Head & Tail
+struct node *head = NULL;
+struct node *tail = NULL;
+
+//Add Node
+
+int addNode(int data)
+{
+    //Linked List is Empty
+    if(head==NULL)
+    {
+        struct node *new = (struct node *)malloc(sizeof(struct node));
+        new->data = data;
+        new->next = NULL;
+
+        head = tail = new;
+    }
+ 
+    //If Linked List is  Not Empty
+
+    else
+    {
+        struct node *new = (struct node *)malloc(sizeof(struct node));
+        new->data =data;
+        new->next = NULL;
+
+        tail->next = new;
+
+        tail = new; 
+    }
+
+    return 0;
+}
+
+//Add Node To Head
+int addNodeHead(int data)
+//Linked List is Empty
+{
+    if(head==NULL)
+    {
+        struct node *new = (struct node *)malloc(sizeof(struct node));
+        new->data;
+        new->next=NULL;
+
+        head = tail = new;
+    }
+    else
+    {
+        struct node *new = (struct node *)malloc(sizeof(struct node));
+        new->data;
+        new->next = head;
+
+        head = new;
+    }
+}
+
+//Print
+int printList()
+{
+    struct node *index = head;
+    while(index !=NULL)
+    {
+        print("%d ->", index->data);
+        index = index->next;
+    }
+
+
+    return 0;
+}
+
+int main()
+{
+    addNode(10);
+    addNode(14);
+    addNode(16);
+    addNode(19);
+
+    addNodeHead(15);
+
+    printList();
+    return 0;
+}
