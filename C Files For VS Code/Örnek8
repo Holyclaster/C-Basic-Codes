@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int topla (int a, int b);
+int main()
+{
+    int sayi1, sayi2;
+    printf("2 Adet Sayi Giriniz: \n");
+    scanf("%d %d", &sayi1, &sayi2);
+    printf("Sayilarin Toplami:%d", topla(sayi1, sayi2));
+    return 0;
+}
+int topla (int a, int b)
+{
+    return a+b;
+}

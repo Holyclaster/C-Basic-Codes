@@ -1,0 +1,66 @@
+#include <stdio.h>
+
+float payment()
+{
+    float gelir, gider, gelir2, gider2, net;
+    char dogruluk, dogruluk2;
+
+    printf("Geliri Giriniz:\n");
+    scanf("%f", &gelir);
+    
+    printf("Gideri Giriniz:\n");
+    scanf("%f", &gider);
+        
+
+    net = gelir - gider;
+    printf("Ek gelir ya da gelir var mi?(y/n)\n");
+    scanf(" %c", &dogruluk);    
+    
+    if (dogruluk == 'n' || dogruluk == 'h')
+    {
+        printf("Net Kazanc:%.2f\n", net);
+    }
+    else if (dogruluk == 'y' || dogruluk == 'e')
+    {
+        printf("Lutfen Ek Islemin Gelir Mi Gider Mi Olduğunu Seciniz:\n");
+        printf("GELIR ICIN: '+'  GIDER ICIN: '-'\n");
+        scanf(" %c", &dogruluk2);
+        
+            if (dogruluk2 == '+')
+            {
+                printf("Ek Gelir Oncesi Net%.2f\n", net);
+                printf("Ek Geliri Giriniz:\n");
+                scanf("%f", &gelir2);
+                net = net + gelir2;
+                printf("%.2f\n", net);
+            }
+            else if (dogruluk2 == '-')
+            {
+                printf("Ek Gider Oncesi Net%.2f\n", net);
+                printf("Ek Gideri Giriniz:\n");
+                scanf("%f", &gider2);
+                net = net - gider2;
+                printf("%.2f\n", net);            
+            }
+            else 
+            {
+                printf("Lutfen Gecerli Operatoru Seciniz\n");
+                return 1;
+            }
+        }    
+        else
+        {
+            printf("Lutfen Gecerli Harfi Girinz:\n");
+            return 1;
+        }
+    return net; 
+}
+
+int main()
+{
+    float net;
+
+    net = payment();
+
+    return 0;
+}

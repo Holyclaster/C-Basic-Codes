@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{
+    int lenght;
+    char word[30];
+    
+    
+    printf("Please Enter a Word: \n");
+    scanf("%s", word);
+    
+    lenght = strlen(word);
+
+    if (lenght > 30)
+    {
+        printf("Word Cannot Be Longer Than 30 Characters");
+    }
+    else 
+    {
+        printf("Length Of The Word Is: %d\n", lenght);
+    }
+
+    return 0;
+}

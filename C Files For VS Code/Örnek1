@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+float avg()
+{
+    int n;
+    float toplam = 0;
+    printf("Kac Sayi Gireceginizi Seciniz:\n");
+    scanf("%d", &n);
+
+    for (int i=1; i<=n; i++)
+    {
+        float sayi;
+        printf("Sayiyi Giriniz:%d\n", i);
+        scanf("%f",&sayi);
+        toplam += sayi;
+    }
+    float avg = toplam / n;
+    return avg;
+}
+    
+int main()
+{
+    float average = avg();
+
+    printf("Girilen Sayilarin Ortalamasi:%f\n", average);
+
+    return 0;
+}

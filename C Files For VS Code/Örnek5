@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int takePower(int taban,int us)
+{
+    printf("Lutfen Tabani Giriniz\n");
+    scanf("%d", &taban);
+    printf("Ussu Giriniz\n");
+    scanf("%d", &us);
+
+    int islem = pow (taban,us);
+    printf("%d\n", islem);
+    return islem;
+}
+
+double getRoot (int taban)
+{
+    printf("Lutfen Tabani Giriniz\n");
+    scanf("%d",&taban);
+    double islem = sqrt (taban);
+    printf("%.2f\n", islem);
+    return islem;
+}
+
+double getLog (int us)
+{
+    printf("Ussu Giriniz\n");
+    scanf("%d",&us);
+    double islem = log(us);
+    printf("%.2f\n", islem);
+    return islem;
+}
+
+
+
+int main()
+{
+    int entrednumber, us;
+    int repeat = 1;
+    
+    while (repeat)
+    {
+        printf("++++++++++++++\n");
+        printf("++++ MENU ++++\n");
+        printf("++++++++++++++\n");
+        printf("1-Us Alma\n");
+        printf("2-Karekok\n");
+        printf("3-Logaritma (e Tabaninda)\n");
+        printf("0-Cikis\n");
+        printf("Lutfen seciminizi giriniz:\n");
+        scanf("%d", &entrednumber);
+       
+     switch (entrednumber) 
+        {
+            case 1:
+                takePower(us, entrednumber);
+                break;
+
+            case 2:
+                getRoot(entrednumber);
+                
+                break;
+
+            case 3:
+                getLog(entrednumber);
+                break;
+
+            case 0:
+                repeat = 0;
+                break;
+
+            default:
+                printf("Lutfen Gecerli Bir Sayi Giriniz!\n");
+        }
+
+            if (repeat)
+            {
+                printf("Islemi Devam Ettirmek Istiyor Musunuz?\n");
+                printf("EVET = '1'  HAYIR = '0'\n");
+                scanf("%d", &repeat);
+           }
+        }   
+      
+    return 0;
+}

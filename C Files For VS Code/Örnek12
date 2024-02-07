@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int randomize();
+
+    printf("Please Enter A Number Between 1-6:\n");
+    scanf("%d", &number);
+    
+    srand(time(NULL));
+    
+    int min = 1;
+    int max = 6;
+    
+    int randomNumber = min + rand() % (max - min + 1);
+
+    if (randomNumber == number)
+    {
+        printf("Congratulations You Picked Correct Number\n");
+    }
+    else
+    {
+        printf("You Picked Wrong Number Would You Like To Try Again\n");
+        printf("Yes For ->'1'\n");
+        printf("No For ->'0'\n");
+        scanf("%d",&questioning)
+    }
+    
+
+
+int main()
+{
+    int number, questioning;
+    
+    printf("Random number between %d and %d: %d\n", min, max, randomNumber);
+
+    return 0;
+}

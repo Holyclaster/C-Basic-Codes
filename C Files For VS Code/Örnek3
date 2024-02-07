@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int oddNumbers()
+{
+    int sayi;
+
+
+    printf("Bir Sayi Giriniz:\n");
+    scanf("%d", &sayi);
+
+
+    for (int i = 0; i <=sayi; i++)
+    {
+        
+        if(i %2 == 1)
+        {
+            printf("%d", i);
+        }
+        printf(" ") ;   
+    }
+}
+
+int evenNumbers()
+{
+    int sayi;
+
+
+    printf("Bir Sayi Giriniz:\n");
+    scanf("%d", &sayi);
+
+
+    for (int i = 0; i <=sayi; i++)
+    {
+        
+        if(i %2 == 0)
+        {
+            printf("%d", i);
+        }
+        printf(" ") ;   
+    }
+}
+
+
+int main()
+{
+    int repeat = 1;
+    int secim;
+
+  while (repeat)
+  {
+    printf("**************\n");
+    printf("*****MENU*****\n");
+    printf("**************\n");
+    printf("1-Tek Sayilar\n");
+    printf("2-Cift Sayilar\n");
+    printf("Cikis Icin '0'\n");
+    
+    scanf("%d",&secim);
+    
+    switch (secim)
+    {
+    case 1:
+        oddNumbers();
+        break;
+    
+    case 2:
+        evenNumbers();
+        break;
+    case 0:
+
+        repeat = 0;
+        break;
+        default:
+        printf("Lutfen Gecerli Bir Sayi Giriniz!\n");
+    }    
+        if (repeat)
+            {
+                printf("Islemi Devam Ettirmek Istiyor Musunuz?\n");
+                printf("EVET = '1'  HAYIR = '0'\n");
+                scanf("%d", &repeat);
+            }
+  }
+    return 0;
+}

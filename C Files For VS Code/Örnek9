@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    int factorial = 1, n;
+
+    printf("Enter a Number:\n");
+    scanf("%d", &n);
+
+    }
+    if (n<=0)
+    {
+        printf("Cant Be '0' or Negative Numbers:\n");
+    }
+    else
+    {
+        for (int i=n; i >= 2; i--)
+        {
+            factorial *= i;
+        }
+    printf("Result:%d", factorial);
+    
+return 0;
+}

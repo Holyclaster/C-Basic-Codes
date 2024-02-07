@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int satir;
+    int sutun =4;
+    char secim;
+    printf("**************\n");
+    printf("*****MENU*****\n");
+    printf("**************\n");
+    printf("Yapilebilecek Islemler:\n");
+    printf("1-Dortgen Cizme\n");
+    printf("2-Ucgen Cizme\n");
+ 
+    printf("Satir Sayisini Giriniz:\n");
+    scanf("%d", &satir);
+    printf("Sutun Sayisini Giriniz:\n");
+    scanf("%d", &sutun);
+    printf("Bir Sekil Seciniz: \n");
+    scanf(" %c", &secim);
+    
+    
+    for (int i = 0; i < sutun; i++)
+    {
+        for (int j= 0;  j< satir; j++)
+        {
+            printf("%c", secim);
+        } 
+        printf("\n");
+    }
+
+    return 0;
+}

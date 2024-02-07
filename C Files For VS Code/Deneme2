@@ -1,0 +1,130 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>  
+#define WORD_SIZE   30
+
+//buyukharfecevir_tum fonksiyonu toupper sız yazılacak.
+//buyukharfecevir_ilkharf fonksiyonu char *dönsün void dönmesin.
+
+char firstLeter(char *word) 
+{
+    if (*word)
+        *word = toupper(*word);
+    return *word;
+}
+
+void allLetter(char *word)
+//strlen ile fonksiyon düzenlenecek (for döngülerinde strlen kullanımı)   2. arama metni olarak wordde geçen harflerin for döngüsü ile sıralanması
+{
+    for (size_t i = 0; word[i] != '\0'; i++) 
+    {
+        if (word[i] >= 'a' && word[i] <= 'z')
+        {
+            word[i] = word[i] - 'a' + 'A';
+        }
+    }
+}
+
+void theLetterYouPick(char *word, int whichLetter)
+    // döngüsüz bu fonksiyonun yazılması
+    // girilen whichLetter parametresi = 3,  word[whichLetter] = büyük harf yap
+{
+    int index = whichLetter - 1;
+    
+    if (index >= 0 && index < strlen(word))
+    {
+        word[index] = toupper(word[index]);
+    }
+}   
+
+void typeOfLetter(char *word, char pickedletter) 
+{
+    for (int i = 0; word[i] != '\0'; i++) 
+    {
+        if (word[i] == pickedletter) 
+        {
+            word[i] = toupper(pickedletter);
+        }
+    }
+}
+
+int main() 
+{
+    char word[WORD_SIZE + 1];
+    char pickedletter;
+    int repeat = 1;
+    int entrednumber;
+    int whichLetter; 
+    
+    while (repeat) 
+    {
+        printf("************************\n");
+        printf("***** --- MENU --- *****\n");
+        printf("************************\n");
+        printf("\n");
+        printf("Yapilabilecek Islemler:\n");
+        printf("1-)Girilen kelimenin Ilk Harfini Buyutme\n");
+        printf("2-)Girilen Harflerin Hepsini Buyutme\n");
+        printf("3-)Sadece Istenilen Harfi Secme\n");
+        printf("4-)Istenilen Harfi Hepsini Degistirme\n");
+        printf("0-)Cikis\n");
+    
+        printf("Lutfen kelimeyi Giriniz: ");   // BURADA GİRİLEN KARAKTER KARŞILAŞTIRILACAK, X TEN FAZLA İSE UYARI VERİLECEK AYNI INPUT EKRANI AÇILACAK
+        scanf("%s", word);
+    
+        if (strlen(word) > WORD_SIZE)
+        {
+            printf("Lutfen 30 Karakterden Az Bir Metin Giriniz!\n");
+            return 1;
+        }
+    
+        printf("Lutfen Yapmak Istediginiz Islemi Seciniz: ");
+        scanf("%d", &entrednumber);
+    
+        switch (entrednumber) 
+        {
+            case 1:
+                firstLeter(word);
+                break;
+
+            case 2:
+                allLetter(word);
+                break;
+
+            case 3:
+                printf("Hangi harfin buyuk olmasini istersiniz (1, 2, 3, ...): ");
+                scanf("%d", &whichLetter);
+                theLetterYouPick(word, whichLetter);
+                break;
+            
+            case 4:
+            getchar();
+            
+            printf("Buyuk Harfe Cevirmek Istediginiz Harfi Giriniz:\n");
+            scanf("%c", &pickedletter);
+            typeOfLetter(word, pickedletter);
+            printf("%s\n", word);
+            break;
+            
+            case 0:
+                repeat = 0;
+                break;
+
+            default:
+                printf("Lutfen Gecerli Bir Sayi Giriniz!\n");
+        }
+        
+        printf("Sonuc: %s\n", word);
+        
+        
+        if (repeat)
+        {
+            printf("Islemi Devam Ettirmek Istiyor Musunuz?\n");
+            printf("EVET = '1'  HAYIR = '0'\n");
+            scanf("%d", &repeat);
+        }
+    }
+
+    return 0;
+}

@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() 
+{
+    int sayi;
+    
+    printf("Welcome To Prime Number Checker\n");
+    printf("Please Enter A number:");
+    scanf("%d\n", &sayi);
+
+   while (asal_sayi < sayi)
+    {
+        do(asal_sayi % sayi == 0)
+        {
+            
+        }
+    }
+
+    }
+    if (asal_sayi % sayi == 0)
+    {
+        printf("It's not a prime number\n");
+    }
+    else
+    {
+        printf("It's a prime number\n");
+    }
+
+    return 0;
+}

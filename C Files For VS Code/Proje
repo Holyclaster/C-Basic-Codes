@@ -1,0 +1,55 @@
+int main() {
+    int girilensayi;
+    char kelime[WORD_SIZE + 1];
+    char secilenharf;
+
+    printf("************************\n");
+    printf("***** --- MENU --- *****\n");
+    printf("************************\n");
+    printf("\n");
+    printf("Yapilabilecek Islemler:\n");
+    printf("1-)Girilen Kelimenin Ilk Harfini Buyutme\n");
+    printf("2-)Girilen Harflerin Hepsini Buyutme\n");
+    printf("3-)Sadece Istenilen Harfi Secme\n");
+    printf("4-)Istenilen Harfi Hepsini Degistirme\n");
+    
+    printf("Lutfen Kelimeyi Giriniz: ");            // BURADA GİRİLEN KARAKTER KARŞILAŞTIRILACAK, X TEN FAZLA İSE UYARI VERİLECEK AYNI INPUT EKRANI AÇILACAK
+    scanf("%s", kelime);
+
+    printf("Lutfen Yapmak Istediginiz Islemi Seciniz: ");
+    scanf("%d", &girilensayi);
+
+    switch (girilensayi) {
+        case 1:
+            firstLeter(kelime);
+            break;
+
+        case 2:
+            allLetter(kelime);
+            break;
+
+        case 3:
+            printf("Hangi harfin buyuk olmasini istersiniz (1, 2, 3, ...):\n");
+            int harfsirasi;
+            scanf("%d", &harfsirasi);
+            theLetterYouPick(kelime, harfsirasi);
+            break;
+            
+        case 4:
+            getchar();
+            
+            printf("Buyuk Harfe Cevirmek Istediginiz Harfi Giriniz:");
+            scanf("%c", &secilenharf);
+            theLetterYouPick(kelime, secilenharf);
+            printf("%s\n", kelime);
+            break;
+
+        default:
+            printf("Hatali Secim! Gecerli Bir Secenek Seciniz.\n");
+            return 1;
+    }
+
+    printf("Sonuc: %s\n", kelime);
+
+    return 0;
+}

@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void randomize();
+
+int min, max, number, randomNumber, questioning;
+int repeat = 1;
+
+int main() {
+    srand(time(NULL));
+
+    while (repeat) {
+        printf("Enter 2 Numbers For the Range\n");
+        printf("Enter Min: \n");
+        if (scanf("%d", &min) != 1) {
+            printf("Invalid input. Please enter a valid integer.\n");
+            continue;
+        }
+        printf("Enter Max: \n");
+        if (scanf("%d", &max) != 1) {
+            printf("Invalid input. Please enter a valid integer.\n");
+            continue;
+        }
+
+        if (min >= max) {
+            printf("Minimum value cannot be greater than or equal to the maximum value.\n");
+            printf("Do you want to continue playing? (1 for Yes, 0 for No): ");
+            if (scanf("%d", &repeat) != 1 || (repeat != 0 && repeat != 1)) {
+                printf("Invalid input. Please enter 0 or 1.\n");
+                break;
+            }
+            continue;
+        }
+
+        randomize();
+        printf("\n");
+
+        if (randomNumber == number) {
+            printf("Congratulations! You Picked the Correct Number\n");
+        } else {
+            printf("You Picked the Wrong Number. Would You Like To Try Again?\n");
+            printf("The Correct Number Was %d\n", randomNumber);
+        }
+
+        printf("1 for Yes\n");
+        printf("0 for No\n");
+        if (scanf("%d", &questioning) != 1 || (questioning != 0 && questioning != 1)) {
+            printf("Invalid input. Please enter 0 or 1.\n");
+            break;
+        }
+
+        if (questioning == 1) {
+            continue;
+        } else {
+            printf("Thank You For Playing!\n");
+            break;
+        }
+    }
+    return 0;
+}
+
+void randomize() {
+    printf("Make A Guess: ");
+    if (scanf("%d", &number) != 1) {
+        printf("Invalid input. Please enter a valid integer.\n");
+
+    }
+
+    randomNumber = min + rand() % (max - min + 1);
+}
